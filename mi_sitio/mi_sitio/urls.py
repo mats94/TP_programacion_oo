@@ -16,7 +16,7 @@ Including another URLconf
 from django.contrib import admin
 from django.conf.urls import url
 
-from pelicula.views import ListaGenero, CrearGenero, ModificarGenero, EliminarGenero
+from pelicula.views import ListaGenero, CrearGenero, ModificarGenero, EliminarGenero, ListaCliente, CrearCliente, ModificarCliente, EliminarCliente
 
 urlpatterns = [
     url('admin/', admin.site.urls),
@@ -24,4 +24,9 @@ urlpatterns = [
     url(r'^genero/crear/$', CrearGenero.as_view(success_url="/genero/")),
     url(r'^genero/modificar/(?P<pk>\d+)$', ModificarGenero.as_view(success_url="/genero/")),
     url(r'^genero/eliminar/(?P<pk>\d+)$', EliminarGenero.as_view(success_url="/genero/")),
+    # Agregue abm clientes url
+     url(r'^cliente/$', ListaCliente.as_view()),
+     url(r'^cliente/crear/$', CrearCliente.as_view(success_url="/cliente/")),
+     url(r'^cliente/modificar/(?P<pk>\d+)$', ModificarCliente.as_view(success_url="/cliente/")),
+     url(r'^cliente/eliminar/(?P<pk>\d+)$', EliminarCliente.as_view(success_url="/cliente/")),
 ]
