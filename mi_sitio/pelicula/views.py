@@ -37,7 +37,7 @@ class ListaCliente(ListView):
 class CrearCliente(CreateView):
     model = Cliente
 
-    fields = ['id', 'nombre' , 'telefono', 'email']
+    fields = ['id', 'nombre' , 'telefono', 'email', 'peli_Alquilada']
 
     print('*' * 50)
 
@@ -58,30 +58,30 @@ class EliminarCliente(DeleteView):
     fields = ['id', 'nombre' , 'telefono', 'email']
 
 
-class ListaPrestamo(ListView):
-    model = Prestamo
+# class ListaPrestamo(ListView):
+#   model = Prestamo
 
 
-class CrearPrestamo(CreateView):
-    model = Prestamo
+#class CrearPrestamo(CreateView):
+#    model = Prestamo
 
-    fields = ['codigoprest', 'fecha' , 'fecha_devolucion', 'pelicula']
+#    fields = ['codigoprest', 'fecha' , 'fecha_devolucion', 'pelicula']
 
-    print('*' * 50)
+#    print('*' * 50)
 
-    for p in Prestamo.objects.all():
-        print(p)
+#    for p in Prestamo.objects.all():
+#        print(p)
         
-    print('*' * 50)
+#    print('*' * 50)
 
 
-class ModificarPrestamo(UpdateView):
-    model = Prestamo
+#class ModificarPrestamo(UpdateView):
+#    model = Prestamo
 
-    fields = ['codigoprest', 'fecha' , 'fecha_devolucion', 'pelicula']
+#    fields = ['codigoprest', 'fecha' , 'fecha_devolucion', 'pelicula']
 
 
-class Prestamo(UpdateView):
-    model = Prestamo
+#class Prestamo(UpdateView):
+#    model = Prestamo
 
-    fields = ['codigoprest', 'fecha' , 'fecha_devolucion', 'pelicula']
+#   fields = ['codigoprest', 'fecha' , 'fecha_devolucion', 'pelicula']

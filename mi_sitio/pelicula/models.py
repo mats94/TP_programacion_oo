@@ -25,13 +25,12 @@ class Cliente(models.Model):
     def __str__(self):
         return self.nombre
     # Listar clientes que tengan alguna pelicula alquilada
-    @property
-    def clientes_con_peliculas(self):
-        if(self.peli_Alquilada == True):
-            return self.nombre
+    """def clientes_con_peliculas(self):
+       if(self.peli_Alquilada == True):
+            return self.nombre """
 
 class Prestamo(models.Model):
-    codigoprest = models.IntegerField(primary_key=True)
+    codigoprest = models.IntegerField(null=True)
     fecha = models.DateField()
     fecha_devolucion = models.DateField()
     pelicula = models.ForeignKey(Pelicula, on_delete=models.CASCADE)
