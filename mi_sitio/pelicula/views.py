@@ -1,6 +1,6 @@
 from django.shortcuts import render
 from django.views.generic import ListView, CreateView, DeleteView, UpdateView
-from pelicula.models import Genero, Cliente
+from pelicula.models import Genero, Cliente, Prestamo
 
 
 class ListaGenero(ListView):
@@ -56,3 +56,32 @@ class EliminarCliente(DeleteView):
     model = Cliente
 
     fields = ['id', 'nombre' , 'telefono', 'email']
+
+
+class ListaPrestamo(ListView):
+    model = Prestamo
+
+
+class CrearPrestamo(CreateView):
+    model = Prestamo
+
+    fields = ['codigoprest', 'fecha' , 'fecha_devolucion', 'pelicula']
+
+    print('*' * 50)
+
+    for p in Prestamo.objects.all():
+        print(p)
+        
+    print('*' * 50)
+
+
+class ModificarPrestamo(UpdateView):
+    model = Prestamo
+
+    fields = ['codigoprest', 'fecha' , 'fecha_devolucion', 'pelicula']
+
+
+class Prestamo(UpdateView):
+    model = Prestamo
+
+    fields = ['codigoprest', 'fecha' , 'fecha_devolucion', 'pelicula']

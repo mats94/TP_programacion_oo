@@ -20,13 +20,24 @@ class Cliente(models.Model):
     nombre = models.CharField(max_length=100)
     telefono = models.CharField(max_length=20)
     email = models.CharField(max_length=20, default='')
+    peli_Alquilada = models.BooleanField(default=False)
 
     def __str__(self):
         return self.nombre
+    # Listar clientes que tengan alguna pelicula alquilada
+    @property
+    def clientes_con_peliculas(self):
+        if(self.peli_Alquilada == True):
+            return self.nombre
 
 class Prestamo(models.Model):
+    codigoprest = models.IntegerField(primary_key=True)
     fecha = models.DateField()
     fecha_devolucion = models.DateField()
     pelicula = models.ForeignKey(Pelicula, on_delete=models.CASCADE)
+
+
+    def __str__(self):
+        return self.pelicula
 
 

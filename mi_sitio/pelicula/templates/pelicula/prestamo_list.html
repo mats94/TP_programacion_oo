@@ -1,0 +1,9 @@
+
+
+<h2>Listado de peliculas</h2>
+
+{% for p in object_list  %}
+<ul>
+    <li>{{ p.pelicula }}</li>
+</ul>
+{% endfor %}
