@@ -37,7 +37,7 @@ class ListaCliente(ListView):
 class CrearCliente(CreateView):
     model = Cliente
 
-    fields = ['id', 'nombre' , 'telefono', 'email', 'peli_Alquilada']
+    fields = ['id', 'nombre' , 'telefono', 'email']
 
     print('*' * 50)
 

@@ -20,7 +20,7 @@ class Cliente(models.Model):
     nombre = models.CharField(max_length=100)
     telefono = models.CharField(max_length=20)
     email = models.CharField(max_length=20, default='')
-    peli_Alquilada = models.BooleanField(default=False)
+    #peli_Alquilada = models.BooleanField(default=False)
 
     def __str__(self):
         return self.nombre
