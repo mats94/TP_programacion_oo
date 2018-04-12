@@ -1,3 +1,6 @@
+{% load staticfiles %}
+<link rel="stylesheet" type="text/css" href="{% static 'pelicula/style.css' %}" /> <!--vinculo hoja de estilos con el template html -->
+
 <h2>Listado de genero</h2>
 
 {% for g in object_list  %}
