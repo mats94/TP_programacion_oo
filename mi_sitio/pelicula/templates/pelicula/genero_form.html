@@ -1,4 +1,11 @@
-Crear Un Genero
+<!-- Template para crear generos nuevos o modificarlos -->
+
+{% load staticfiles %}
+<link rel="stylesheet" type="text/css" href="{% static 'pelicula/style.css' %}" />
+
+<h1> 
+<b>GENERO NUEVO</b>
+</h1>
 
 <form action="" method="post">{% csrf_token %}
     {{ form.as_p }}

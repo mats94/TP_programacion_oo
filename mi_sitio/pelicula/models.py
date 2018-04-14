@@ -1,6 +1,6 @@
 from django.db import models
 
-
+# Genero de la pelicula
 class Genero(models.Model):
     codigo = models.IntegerField(primary_key=True)
     descripcion = models.CharField(max_length=150)
@@ -8,13 +8,13 @@ class Genero(models.Model):
     def __str__(self):
         return self.descripcion
 
-
+# Pelicula
 class Pelicula(models.Model):
     nombre = models.CharField(max_length=100)
     estreno = models.IntegerField()
     genero = models.ForeignKey(Genero, on_delete=models.CASCADE, default=None)
 
-
+# Cliente que asiste al Videoclub
 class Cliente(models.Model):
     id = models.IntegerField(primary_key=True)
     nombre = models.CharField(max_length=100)
@@ -29,12 +29,12 @@ class Cliente(models.Model):
        if(self.peli_Alquilada == True):
             return self.nombre """
 
+# Prestamo de la pelicula
 class Prestamo(models.Model):
     codigoprest = models.IntegerField(null=True)
     fecha = models.DateField()
     fecha_devolucion = models.DateField()
     pelicula = models.ForeignKey(Pelicula, on_delete=models.CASCADE)
-
 
     def __str__(self):
         return self.pelicula

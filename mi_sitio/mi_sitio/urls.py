@@ -15,9 +15,10 @@ Including another URLconf
 """
 from django.contrib import admin
 from django.conf.urls import url
-
 from pelicula.views import ListaGenero, CrearGenero, ModificarGenero, EliminarGenero, ListaCliente, CrearCliente, ModificarCliente, EliminarCliente
 
+# Configuracion para visualizar las distintas urls de la app Videoclub
+app_name= 'pelicula'
 urlpatterns = [
     url('admin/', admin.site.urls),
     url(r'^genero/$', ListaGenero.as_view()),

@@ -1,8 +1,17 @@
+<!-- Template para eliminar clientes -->
 
-Eliminar
+{% load staticfiles %}
+<link rel="stylesheet" type="text/css" href="{% static 'pelicula/stylepublico.css' %}" />
 
-<form action="" method="post">{% csrf_token %} <!-- Cambiar a post -->
+<h1> 
+<b>ELIMINAR CLIENTE</b>
+</h1>
+<h2>
+¿Está seguro que desea eliminar este cliente?
+</h2>
+
+<form action="" method="post">{% csrf_token %} 
     {{ form.as_p }}
     <input type="submit" value="Borrar" />
-    
+    <a href="http://localhost:8000/cliente/">Cancel</a>
 </form>

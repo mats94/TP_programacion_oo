@@ -2,15 +2,14 @@ from django.shortcuts import render
 from django.views.generic import ListView, CreateView, DeleteView, UpdateView
 from pelicula.models import Genero, Cliente, Prestamo
 
-
-class ListaGenero(ListView):
+# Vista de Genero
+class ListaGenero(ListView): # Lista los distintos generos de una pelicula (GET)
     model = Genero
 
 
-class CrearGenero(CreateView):
+class CrearGenero(CreateView): # Crea generos nuevos (POST)
     model = Genero
 
-    #fields = [f.name for f in Genero._meta.get_fields()]
     fields = ['codigo', 'descripcion']
 
     print('*' * 50) # Averiguar
@@ -18,23 +17,26 @@ class CrearGenero(CreateView):
     for g in Genero.objects.all():
         print(g)
         
-
     print('*' * 50)
 
-class ModificarGenero(UpdateView):
+
+class ModificarGenero(UpdateView): # Modifica los generos existentes a partir de un ID (PUT)
+    model = Genero
+
+    fields = ['codigo', 'descripcion']
+
+
+class EliminarGenero(DeleteView): # Elimina cualquier genero ee la lista ingresando un ID (DELETE)
     model = Genero
     fields = ['codigo', 'descripcion']
 
 
-class EliminarGenero(DeleteView):
-    model = Genero
-    fields = ['codigo', 'descripcion']
-
-# Agregue
-class ListaCliente(ListView):
+# Vista de cliente
+class ListaCliente(ListView): # Lista los distintos clientes que asisten al Videoclub (GET)
     model = Cliente
 
-class CrearCliente(CreateView):
+
+class CrearCliente(CreateView): # Crea clientes nuevos (POST)
     model = Cliente
 
     fields = ['id', 'nombre' , 'telefono', 'email']
@@ -46,13 +48,14 @@ class CrearCliente(CreateView):
         
     print('*' * 50)
 
-class ModificarCliente(UpdateView):
+
+class ModificarCliente(UpdateView): # Modifica los datos del cliente a partir de un ID (PUT)
     model = Cliente
 
     fields = ['id', 'nombre' , 'telefono', 'email']
 
 
-class EliminarCliente(DeleteView):
+class EliminarCliente(DeleteView): # Elimina cualquier cliente de la lista ingresando un ID (DELETE)
     model = Cliente
 
     fields = ['id', 'nombre' , 'telefono', 'email']

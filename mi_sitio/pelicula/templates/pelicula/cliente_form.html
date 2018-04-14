@@ -1,6 +1,11 @@
+<!-- Template para crear clientes nuevos o modificarlos -->
 
-Agregar un cliente nuevo
+{% load staticfiles %}
+<link rel="stylesheet" type="text/css" href="{% static 'pelicula/stylepublico.css' %}" />
 
+<h1> 
+<b>CLIENTE NUEVO</b>
+</h1>
 <form action="" method="post">{% csrf_token %}
     {{ form.as_p }}
     <input type="submit" value="Save" />

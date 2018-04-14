@@ -1,5 +1,11 @@
+<!-- Template para listar los clientes -->
 
-<h2>Listado de cliente</h2>
+{% load staticfiles %}
+<link rel="stylesheet" type="text/css" href="{% static 'pelicula/stylepublico.css' %}" /> 
+
+<h1>
+<b>CLIENTE</b>
+</h1>
 
 {% for c in object_list  %}
 <ul>
