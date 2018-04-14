@@ -1,0 +1,17 @@
+
+
+{% load staticfiles %}
+<link rel="stylesheet" type="text/css" href="{% static 'pelicula/style.css' %}" />
+
+<h1> 
+<b>ELIMINAR PELICULA</b>
+</h1>
+<h2>
+¿Está seguro que desea eliminar este cliente?
+</h2>
+
+<form action="" method="post">{% csrf_token %} 
+    {{ form.as_p }}
+    <input type="submit" value="Borrar" />
+    <a href="http://localhost:8000/pelicula/">Cancel</a>
+</form>

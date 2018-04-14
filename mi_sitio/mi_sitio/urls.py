@@ -15,7 +15,9 @@ Including another URLconf
 """
 from django.contrib import admin
 from django.conf.urls import url
-from pelicula.views import ListaGenero, CrearGenero, ModificarGenero, EliminarGenero, ListaCliente, CrearCliente, ModificarCliente, EliminarCliente
+from pelicula import views
+from pelicula.views import ListaGenero, CrearGenero, ModificarGenero, EliminarGenero, ListaCliente, CrearCliente, ModificarCliente, EliminarCliente, ListaPelicula, CrearPelicula, ModificarPelicula, EliminarPelicula, BuscarAlquiladaPelicula
+
 
 # Configuracion para visualizar las distintas urls de la app Videoclub
 app_name= 'pelicula'
@@ -30,4 +32,10 @@ urlpatterns = [
      url(r'^cliente/crear/$', CrearCliente.as_view(success_url="/cliente/")),
      url(r'^cliente/modificar/(?P<pk>\d+)$', ModificarCliente.as_view(success_url="/cliente/")),
      url(r'^cliente/eliminar/(?P<pk>\d+)$', EliminarCliente.as_view(success_url="/cliente/")),
+
+     url(r'^pelicula/$', ListaPelicula.as_view()),
+     url(r'^pelicula/crear/$', CrearPelicula.as_view(success_url="/pelicula/")),
+     url(r'^pelicula/modificar/(?P<pk>\d+)$', ModificarPelicula.as_view(success_url="/pelicula/")),
+     url(r'^pelicula/eliminar/(?P<pk>\d+)$', EliminarPelicula.as_view(success_url="/pelicula/")),
+     url(r'^pelicula/alquilada/$', ListaPelicula.something.as_view()),
 ]

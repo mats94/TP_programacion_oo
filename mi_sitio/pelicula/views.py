@@ -1,8 +1,19 @@
 from django.shortcuts import render
 from django.views.generic import ListView, CreateView, DeleteView, UpdateView
-from pelicula.models import Genero, Cliente, Prestamo
+from pelicula.models import Genero, Cliente, Pelicula
 
-# Vista de Genero
+
+
+
+
+
+#     --------------              Vista de Genero        ----------------
+
+
+
+
+
+
 class ListaGenero(ListView): # Lista los distintos generos de una pelicula (GET)
     model = Genero
 
@@ -31,7 +42,16 @@ class EliminarGenero(DeleteView): # Elimina cualquier genero ee la lista ingresa
     fields = ['codigo', 'descripcion']
 
 
-# Vista de cliente
+
+
+
+# -----------------------          Vista de cliente   -----------------------
+
+
+
+
+
+
 class ListaCliente(ListView): # Lista los distintos clientes que asisten al Videoclub (GET)
     model = Cliente
 
@@ -59,6 +79,54 @@ class EliminarCliente(DeleteView): # Elimina cualquier cliente de la lista ingre
     model = Cliente
 
     fields = ['id', 'nombre' , 'telefono', 'email']
+
+
+
+
+
+# -----------------------------         Vista Pelicula         -----------------------
+
+
+
+
+class ListaPelicula(ListView):
+    model = Pelicula
+
+    def something(request):
+        return render(request, 'pelicula/pelicula_alquilada_list.html')
+
+class CrearPelicula(CreateView):
+    model = Pelicula
+
+    fields =  ['id', 'nombre', 'estreno', 'genero', 'alquilada']
+
+    print('*' * 50)
+
+    for pe in Pelicula.objects.all():
+        print(pe)
+
+     
+class ModificarPelicula(UpdateView): 
+    model = Pelicula
+
+    fields =  ['id', 'nombre', 'estreno', 'genero', 'alquilada']
+
+
+class EliminarPelicula(DeleteView): 
+    model = Pelicula
+
+    fields =  ['nombre', 'estreno', 'genero', 'alquilada']
+
+class BuscarAlquiladaPelicula(ListView): 
+    model = Pelicula
+
+    def something(request):
+        return render(request, 'pelicula/pelicula_alquilada_list.html')
+
+
+
+
+
 
 
 # class ListaPrestamo(ListView):

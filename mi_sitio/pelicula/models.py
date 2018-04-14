@@ -10,9 +10,18 @@ class Genero(models.Model):
 
 # Pelicula
 class Pelicula(models.Model):
+    id = models.IntegerField(primary_key=True)
     nombre = models.CharField(max_length=100)
-    estreno = models.IntegerField()
+    estreno = models.DateField(null=True, help_text="Ej: Mes/Dia/Año")
     genero = models.ForeignKey(Genero, on_delete=models.CASCADE, default=None)
+    alquilada = models.BooleanField(default=False)
+
+    def __str__(self):
+        return self.nombre
+
+    def peliculas_alquiladas(self):
+       if(self.alquilada == True):
+            return self.nombre 
 
 # Cliente que asiste al Videoclub
 class Cliente(models.Model):
@@ -20,7 +29,7 @@ class Cliente(models.Model):
     nombre = models.CharField(max_length=100)
     telefono = models.CharField(max_length=20)
     email = models.CharField(max_length=20, default='')
-    #peli_Alquilada = models.BooleanField(default=False)
+   # peli_Alquilada = models.BooleanField(default=False)
 
     def __str__(self):
         return self.nombre
