@@ -25,7 +25,7 @@ class Pelicula(models.Model):
        if(self.alquilada == True):
             return self.nombre
        else: 
-            return ""
+            return ''
 
 
 # Cliente que asiste al Videoclub
