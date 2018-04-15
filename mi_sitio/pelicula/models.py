@@ -18,7 +18,7 @@ class Pelicula(models.Model):
 
     def __str__(self):
         return self.nombre
-
+# Condicion si la pelicula esta alquilada
     def peliculas_alquiladas(self):
        if(self.alquilada == True):
             return self.nombre 
@@ -33,7 +33,6 @@ class Cliente(models.Model):
 
     def __str__(self):
         return self.nombre
-    # Listar clientes que tengan alguna pelicula alquilada
     """def clientes_con_peliculas(self):
        if(self.peli_Alquilada == True):
             return self.nombre """

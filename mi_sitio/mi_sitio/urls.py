@@ -22,20 +22,21 @@ from pelicula.views import ListaGenero, CrearGenero, ModificarGenero, EliminarGe
 # Configuracion para visualizar las distintas urls de la app Videoclub
 app_name= 'pelicula'
 urlpatterns = [
+    # URL genero
     url('admin/', admin.site.urls),
     url(r'^genero/$', ListaGenero.as_view()),
     url(r'^genero/crear/$', CrearGenero.as_view(success_url="/genero/")),
     url(r'^genero/modificar/(?P<pk>\d+)$', ModificarGenero.as_view(success_url="/genero/")),
     url(r'^genero/eliminar/(?P<pk>\d+)$', EliminarGenero.as_view(success_url="/genero/")),
-    # Agregue abm clientes url
+    # URL cliente
      url(r'^cliente/$', ListaCliente.as_view()),
      url(r'^cliente/crear/$', CrearCliente.as_view(success_url="/cliente/")),
      url(r'^cliente/modificar/(?P<pk>\d+)$', ModificarCliente.as_view(success_url="/cliente/")),
      url(r'^cliente/eliminar/(?P<pk>\d+)$', EliminarCliente.as_view(success_url="/cliente/")),
-
+    # URL pelicula
      url(r'^pelicula/$', ListaPelicula.as_view()),
      url(r'^pelicula/crear/$', CrearPelicula.as_view(success_url="/pelicula/")),
      url(r'^pelicula/modificar/(?P<pk>\d+)$', ModificarPelicula.as_view(success_url="/pelicula/")),
      url(r'^pelicula/eliminar/(?P<pk>\d+)$', EliminarPelicula.as_view(success_url="/pelicula/")),
-     url(r'^pelicula/alquilada/$', ListaPelicula.something.as_view()),
+     url(r'^pelicula/alquilada/$', ListaPelicula.as_view()),
 ]

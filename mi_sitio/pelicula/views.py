@@ -37,7 +37,7 @@ class ModificarGenero(UpdateView): # Modifica los generos existentes a partir de
     fields = ['codigo', 'descripcion']
 
 
-class EliminarGenero(DeleteView): # Elimina cualquier genero ee la lista ingresando un ID (DELETE)
+class EliminarGenero(DeleteView): # Elimina cualquier genero de la lista ingresando un ID (DELETE)
     model = Genero
     fields = ['codigo', 'descripcion']
 
@@ -89,13 +89,14 @@ class EliminarCliente(DeleteView): # Elimina cualquier cliente de la lista ingre
 
 
 
-class ListaPelicula(ListView):
+class ListaPelicula(ListView): # Lista las distintas peliculas que hay en el Videoclub (GET)
     model = Pelicula
 
-    def something(request):
-        return render(request, 'pelicula/pelicula_alquilada_list.html')
+    #def something(request):
+     #   return render(request, 'pelicula/pelicula_alquilada_list.html')
 
-class CrearPelicula(CreateView):
+
+class CrearPelicula(CreateView): # Crea peliculas nuevas (POST)
     model = Pelicula
 
     fields =  ['id', 'nombre', 'estreno', 'genero', 'alquilada']
@@ -106,16 +107,17 @@ class CrearPelicula(CreateView):
         print(pe)
 
      
-class ModificarPelicula(UpdateView): 
+class ModificarPelicula(UpdateView): # Modifica los datos de la pelicula a partir de un ID (PUT)
     model = Pelicula
 
     fields =  ['id', 'nombre', 'estreno', 'genero', 'alquilada']
 
 
-class EliminarPelicula(DeleteView): 
+class EliminarPelicula(DeleteView): # Elimina cualquier pelicula de la lista ingresando un ID (DELETE)
     model = Pelicula
 
     fields =  ['nombre', 'estreno', 'genero', 'alquilada']
+
 
 class BuscarAlquiladaPelicula(ListView): 
     model = Pelicula

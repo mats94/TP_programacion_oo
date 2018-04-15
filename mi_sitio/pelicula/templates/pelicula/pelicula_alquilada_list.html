@@ -1,3 +1,5 @@
+<!-- Template para listar las peliculas que fueron alquiladas -->
+
 {% load staticfiles %}
 <link rel="stylesheet" type="text/css" href="{% static 'pelicula/style.css' %}" /> <!--vinculo hoja de estilos con el template html -->
 
@@ -5,7 +7,7 @@
  <b>PELICULAS ALQUILADAS</b>
 </h1>
 
-{% for pe in object_list  %}
+{% for pe in pelicula.peliculas_alquiladas  %}
 <ul>
     <li>{{ pe.nombre }}</li>  <!-- peliculas_alquiladas -->
 </ul>
