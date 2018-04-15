@@ -1,6 +1,7 @@
 from django.shortcuts import render
-from django.views.generic import ListView, CreateView, DeleteView, UpdateView
+from django.views.generic import ListView, CreateView, DeleteView, UpdateView, TemplateView
 from pelicula.models import Genero, Cliente, Pelicula
+from django.template import loader
 
 
 
@@ -92,8 +93,8 @@ class EliminarCliente(DeleteView): # Elimina cualquier cliente de la lista ingre
 class ListaPelicula(ListView): # Lista las distintas peliculas que hay en el Videoclub (GET)
     model = Pelicula
 
-    #def something(request):
-     #   return render(request, 'pelicula/pelicula_alquilada_list.html')
+    def something(request):
+        template = loader.get_template('pelicula_alquilada_list.html')
 
 
 class CrearPelicula(CreateView): # Crea peliculas nuevas (POST)
@@ -119,11 +120,11 @@ class EliminarPelicula(DeleteView): # Elimina cualquier pelicula de la lista ing
     fields =  ['nombre', 'estreno', 'genero', 'alquilada']
 
 
-class BuscarAlquiladaPelicula(ListView): 
+class BuscarAlquiladaPelicula(TemplateView): 
     model = Pelicula
 
     def something(request):
-        return render(request, 'pelicula/pelicula_alquilada_list.html')
+        template = loader.get_template('pelicula_alquilada_list.html')
 
 
 

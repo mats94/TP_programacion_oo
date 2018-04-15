@@ -38,5 +38,5 @@ urlpatterns = [
      url(r'^pelicula/crear/$', CrearPelicula.as_view(success_url="/pelicula/")),
      url(r'^pelicula/modificar/(?P<pk>\d+)$', ModificarPelicula.as_view(success_url="/pelicula/")),
      url(r'^pelicula/eliminar/(?P<pk>\d+)$', EliminarPelicula.as_view(success_url="/pelicula/")),
-     url(r'^pelicula/alquilada/$', ListaPelicula.as_view()),
+     url(r'^pelicula/alquilada/$', views.BuscarAlquiladaPelicula.as_view(template_name="pelicula_alquilada_list.html")),
 ]
