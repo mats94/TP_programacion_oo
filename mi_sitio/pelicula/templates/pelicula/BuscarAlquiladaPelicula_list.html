@@ -7,8 +7,8 @@
  <b>PELICULAS ALQUILADAS</b>
 </h1>
 
-{% for pe in pelicula.peliculas_alquiladas  %}
+{% for pe in object_list  %}
 <ul>
-    <li>{{ pe.nombre }}</li>  <!-- peliculas_alquiladas -->
+    <li>{{ pe.peliculas_alquiladas }}</li>  <!-- peliculas_alquiladas -->
 </ul>
 {% endfor %}
