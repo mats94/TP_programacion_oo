@@ -1,4 +1,5 @@
 from django.db import models
+from django.views.decorators.http import condition
 
 # Genero de la pelicula
 class Genero(models.Model):
@@ -19,9 +20,13 @@ class Pelicula(models.Model):
     def __str__(self):
         return self.nombre     
 
+
     def peliculas_alquiladas(self):  # Condicion si la pelicula esta alquilada
        if(self.alquilada == True):
-            return self.nombre 
+            return self.nombre
+       else: 
+            return ""
+
 
 # Cliente que asiste al Videoclub
 class Cliente(models.Model):
