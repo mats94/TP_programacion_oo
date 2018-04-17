@@ -123,41 +123,16 @@ class EliminarPelicula(DeleteView): # Elimina cualquier pelicula de la lista ing
     fields =  ['nombre', 'estreno', 'genero', 'alquilada']
 
 
-class BuscarAlquiladaPelicula(ListView): 
+class BuscarAlquiladaPelicula(ListView): # Busca aquellas peliculas que fueron alquiladas
     model = Pelicula
     template_name = "pelicula/BuscarAlquiladaPelicula_list.html"
 
 
+class BuscarRomanticaPelicula(ListView): # Busca aquellas peliculas que son romanticas
+    model = Pelicula
+    template_name = "pelicula/BuscarRomanticaPelicula_list.html"
 
 
 
 
 
-
-# class ListaPrestamo(ListView):
-#   model = Prestamo
-
-
-#class CrearPrestamo(CreateView):
-#    model = Prestamo
-
-#    fields = ['codigoprest', 'fecha' , 'fecha_devolucion', 'pelicula']
-
-#    print('*' * 50)
-
-#    for p in Prestamo.objects.all():
-#        print(p)
-        
-#    print('*' * 50)
-
-
-#class ModificarPrestamo(UpdateView):
-#    model = Prestamo
-
-#    fields = ['codigoprest', 'fecha' , 'fecha_devolucion', 'pelicula']
-
-
-#class Prestamo(UpdateView):
-#    model = Prestamo
-
-#   fields = ['codigoprest', 'fecha' , 'fecha_devolucion', 'pelicula']

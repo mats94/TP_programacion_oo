@@ -27,6 +27,11 @@ class Pelicula(models.Model):
        else: 
             return ''
 
+    def peliculas_romanticas(self): # Condicion si la pelicula es romantica
+        if(self.genero == "Romantico"):
+            return self.nombre
+        else:
+            return ''    
 
 # Cliente que asiste al Videoclub
 class Cliente(models.Model):
@@ -34,13 +39,11 @@ class Cliente(models.Model):
     nombre = models.CharField(max_length=100)
     telefono = models.CharField(max_length=20)
     email = models.CharField(max_length=20, default='')
-   # peli_Alquilada = models.BooleanField(default=False)
+  
 
     def __str__(self):
         return self.nombre
-    """def clientes_con_peliculas(self):
-       if(self.peli_Alquilada == True):
-            return self.nombre """
+   
 
 # Prestamo de la pelicula
 class Prestamo(models.Model):
@@ -53,3 +56,4 @@ class Prestamo(models.Model):
         return self.pelicula
 
 
+    

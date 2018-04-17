@@ -1,0 +1,14 @@
+<!-- Template para listar las peliculas romanticas -->
+
+{% load staticfiles %}
+<link rel="stylesheet" type="text/css" href="{% static 'pelicula/style.css' %}" /> <!--vinculo hoja de estilos con el template html -->
+
+<h1>
+ <b>PELICULAS ROMANTICAS</b>
+</h1>
+
+{% for pe in object_list  %}
+<ul>
+    <li>{{ pe.peliculas_romanticas }}</li>  <!-- peliculas_alquiladas -->
+</ul>
+{% endfor %}

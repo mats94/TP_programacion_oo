@@ -16,7 +16,7 @@ Including another URLconf
 from django.contrib import admin
 from django.conf.urls import url
 from pelicula import views
-from pelicula.views import ListaGenero, CrearGenero, ModificarGenero, EliminarGenero, ListaCliente, CrearCliente, ModificarCliente, EliminarCliente, ListaPelicula, CrearPelicula, ModificarPelicula, EliminarPelicula, BuscarAlquiladaPelicula
+from pelicula.views import ListaGenero, CrearGenero, ModificarGenero, EliminarGenero, ListaCliente, CrearCliente, ModificarCliente, EliminarCliente, ListaPelicula, CrearPelicula, ModificarPelicula, EliminarPelicula, BuscarAlquiladaPelicula, BuscarRomanticaPelicula
 from django.views.generic import TemplateView
 
 # Configuracion para visualizar las distintas urls de la app Videoclub
@@ -27,7 +27,7 @@ urlpatterns = [
     url(r'^genero/crear/$', CrearGenero.as_view(success_url="/genero/")),
     url(r'^genero/modificar/(?P<pk>\d+)$', ModificarGenero.as_view(success_url="/genero/")),
     url(r'^genero/eliminar/(?P<pk>\d+)$', EliminarGenero.as_view(success_url="/genero/")),
-    # Agregue abm clientes url
+    
      url(r'^cliente/$', ListaCliente.as_view()),
      url(r'^cliente/crear/$', CrearCliente.as_view(success_url="/cliente/")),
      url(r'^cliente/modificar/(?P<pk>\d+)$', ModificarCliente.as_view(success_url="/cliente/")),
@@ -38,4 +38,5 @@ urlpatterns = [
      url(r'^pelicula/modificar/(?P<pk>\d+)$', ModificarPelicula.as_view(success_url="/pelicula/")),
      url(r'^pelicula/eliminar/(?P<pk>\d+)$', EliminarPelicula.as_view(success_url="/pelicula/")),
      url(r'^pelicula/alquilada/$',BuscarAlquiladaPelicula.as_view()),
+     url(r'^pelicula/romantica/$',BuscarRomanticaPelicula.as_view()),
 ]
