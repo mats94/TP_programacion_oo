@@ -28,7 +28,7 @@ class Pelicula(models.Model):
             return ''
 
     def peliculas_romanticas(self): # Condicion si la pelicula es romantica
-        if(self.genero == "Romantico"):
+        if(self.genero.codigo == 6):
             return self.nombre
         else:
             return ''    
