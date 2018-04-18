@@ -8,7 +8,9 @@
 </h1>
 
 {% for pe in object_list  %}
-<ul>
-    <li>{{ pe.peliculas_romanticas }}</li>
-</ul>
+    {% if pe.peliculas_romanticas != '' %}
+        <ul>
+          <li>  {{ pe.peliculas_romanticas }} </li>
+        </ul>
+    {% endif %}
 {% endfor %}

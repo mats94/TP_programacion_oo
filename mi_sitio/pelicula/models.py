@@ -9,6 +9,9 @@ class Genero(models.Model):
     def __str__(self):
         return self.descripcion
 
+    def saber_codigo(self):
+        return self.codigo
+
 # Pelicula
 class Pelicula(models.Model):
     id = models.IntegerField(primary_key=True)

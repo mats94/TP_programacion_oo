@@ -132,7 +132,9 @@ class BuscarRomanticaPelicula(ListView): # Busca aquellas peliculas que son roma
     model = Pelicula
     template_name = "pelicula/BuscarRomanticaPelicula_list.html"
 
-
+class BuscarPelicula(ListView): # Busca peliculas
+    model = Pelicula
+    template_name = "pelicula/BuscarPelicula_list.html"
 
 
 
