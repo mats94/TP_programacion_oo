@@ -18,7 +18,7 @@ class Pelicula(models.Model):
     alquilada = models.BooleanField(default=False)
 
     def __str__(self):
-        return self.nombre     
+        return self.nombre    
 
 
     def peliculas_alquiladas(self):  # Condicion si la pelicula esta alquilada
@@ -32,6 +32,9 @@ class Pelicula(models.Model):
             return self.nombre
         else:
             return ''    
+
+    def saber_id(self):
+        return self.id
 
 # Cliente que asiste al Videoclub
 class Cliente(models.Model):

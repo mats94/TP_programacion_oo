@@ -1,4 +1,6 @@
 
 body {
     background: white url("img/cine-848x588.jpg") no-repeat center;
+    background-size: cover;
+    color: white;
 }

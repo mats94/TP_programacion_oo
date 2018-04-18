@@ -1,3 +1,7 @@
 body {
-    background: white url("img/cine-780x405.jpg") no-repeat center;
+    background: white  url("img/cine-780x405.jpg") no-repeat center center fixed;
+    background-size: cover;
+    color: white;
 }
+a:link    { color: white }  /* unvisited links */
+a:visited { color: white }  /* visited links   */

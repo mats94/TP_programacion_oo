@@ -8,6 +8,6 @@
 
 {% for pe in object_list  %}
 <ul>
-    <li>{{ pe.nombre }}</li>
+    <li><a href="localhost:8000/pelicula/modificar/{{pe.id}}">{{ pe.nombre }}</a> </li>
 </ul>
 {% endfor %}
