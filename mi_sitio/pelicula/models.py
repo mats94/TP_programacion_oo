@@ -9,8 +9,8 @@ class Genero(models.Model):
     def __str__(self):
         return self.descripcion
 
-    def saber_codigo(self):
-        return self.codigo
+    def saber_codigo(self): 
+          return self.codigo  
 
 # Pelicula
 class Pelicula(models.Model):
